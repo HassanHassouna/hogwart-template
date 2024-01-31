@@ -4,7 +4,11 @@ import './Entity.css';
 
 const Entity = ({ name, img, level ,category}) => {
   return (
-    <div className="entity">
+    <div onClick={
+        () => {
+            window.location.href = `/wiki/${category}/${name}`;
+        }
+    } className="entity">
       <img src={img} alt={name} />
       <div className="info">
         <h2>{name}</h2>

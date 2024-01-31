@@ -25,8 +25,16 @@ const App = (props) => {
     <div>
         <div className="App">
           <HogwartNavbar />
+        <Router>
+          <Routes>
+            <Route path="/" element={<Home categories={categories} />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/categories" element={<Entities getCategoryData={getCategoryData} />} />
+            <Route path="/wiki/:category" element={<Entities getCategoryData={getCategoryData} />} />
+            <Route path="/wiki/:category/:entityName" element={<EntityDescription getCategoryData={getCategoryData} />} />
+          </Routes>
+        </Router>
         </div>
-        {/* add routes and route here */}
     </div>
 
   );
